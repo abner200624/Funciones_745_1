@@ -6,15 +6,24 @@ public class Funcion {
     public static void main(String[] args) {
         Scanner leer = new Scanner(System.in);
         saludar();
-        System.out.println("Hello, type your name");
+        int resultao;
+        System.out.println("Hello, escribe tu nombre: ");
         String name = leer.next();
-        System.out.println(name + " type an edge for the square");
-        int lado = leer.nextInt();
-        int area = areaCuadrado(lado);
-        System.out.println("The area of the square is: " + area);
-        mayus(name);
+        System.out.println(name + " como estas por favor digita numero a sumarle: ");
+        int numa = leer.nextInt();
+        System.out.println(name + " digita numero a ser sumado: ");
+        int numb = leer.nextInt();
+        resultao = sumita(numa, numb);
+        System.out.println("El resultado de su suma fue: " + resultao);
 
-        System.out.println("The current year is: "+currentYear());
+        System.out.println("Muy bien hecho, " + name + ", ahora digita el numero que deceas multiplicar: ");
+        int numc = leer.nextInt();
+        System.out.println(name + ", ahora digita el numero a multiplicar: ");
+        int numd = leer.nextInt();
+        resultao = multiplicasao(numc, numd);
+        System.out.println("El resultado de su multiplicacion fue: " + resultao);
+
+        mayus(name);
     }
 
     //Recibe, pero no retorna
@@ -33,15 +42,34 @@ public class Funcion {
     }
 
     //No Recibe, retorna
-    public static int currentYear()
-    {
+    public static int currentYear() {
         return 2024;
     }
 
     /*
     Crear funciones para las siguientes situaciones
-    1. Sumar 2 numeros
+    1. Sumar 2 numeros*/
+
+    public static int sumita(int numa, int numb) {
+        return numa + numb;
+    }
+
+    /*
     2. Multiplicar 2 numeros con las sumas del 1
+    */
+
+    public static int multiplicasao(int numc, int numd) {
+
+        int result = 0;
+        for (int i = 0; i < numd; i++) {
+
+            result += numc;
+
+        }
+        return result;
+    }
+
+    /*
     3. Potenciar 2 numeros con las sumas del 1
     4. Calcular el factorial de 1 numero
     5. Calcular el area de un cuadrado(recibiendo un lado)
